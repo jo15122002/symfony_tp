@@ -24,3 +24,5 @@
 - /reaction/add POST : ajouter une réaction
 - /reaction/update POST : éditer une réaction
 - /reaction/delete/{id} GET : supprimer une réaction
+
+- Le ParamConverter permet de récupérer des paramètres de la route
