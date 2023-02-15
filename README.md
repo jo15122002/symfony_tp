@@ -5,7 +5,7 @@
 
 - Les routes à créer seront : 
 # Home : 
-- / GET : la route home
+- /home GET : la route home
 # Users :
 - /user GET : voir la liste des users
 - /user/{userId} GET : voir un user 
