@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Link;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -9,8 +10,12 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        // $product = new Product();
-        // $manager->persist($product);
+        for ($i = 0; $i<1000; $i++){
+            $link = new Link();
+            $link->setTitle("A link fixtured")
+                ->setUrl("http://google.com");
+            $manager->persist($link);
+        }
 
         $manager->flush();
     }
