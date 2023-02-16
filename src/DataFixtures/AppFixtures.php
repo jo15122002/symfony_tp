@@ -12,7 +12,7 @@ class AppFixtures extends Fixture
     {
         for ($i = 0; $i<1000; $i++){
             $link = new Link();
-            $link->setTitle("A link fixtured")
+            $link->setTitle("A link fixtured $i")
                 ->setUrl("http://google.com");
             $manager->persist($link);
         }
