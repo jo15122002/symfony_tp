@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <li>
+        <div style="display: flex; flex-direction: row">
+            <div>
+                {{ link.getNbUpvotes() }}
+            </div>
+            <div style="display: flex; flex-direction: column">
+                <a href="/reaction/add/{{ link.id }}?type=LIKE"><img src="https://cdn-icons-png.flaticon.com/512/5820/5820191.png"
+                                                                     style="width: 20px; transform: scaleY(-1);"></a>
+                <a href="/reaction/add/{{ link.id }}?type=DISLIKE"><img src="https://cdn-icons-png.flaticon.com/512/5820/5820191.png"
+                                                                        style="width: 20px"></a>
+            </div>
+            <div>
+                <p>{{ link.title }}</p>
+                <p>{{ link.url }}</p>
+                <a href="./link/delete/{{ link.id }}">Supprimer</a>
+                <a href="./link/{{ link.id }}">Details</a>
+            </div>
+        </div>
+    </li>
+{% endblock %}
