@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Link;
+use App\Form\Type\LinkType;
 use App\Repository\LinkRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -19,11 +20,7 @@ class LinkController extends AbstractController
     {
         $link = new Link();
 
-        $form = $this->createFormBuilder($link)
-            ->add('URL', TextType::class)
-            ->add('title', TextType::class)
-            ->add('save', SubmitType::class, ["label" => "Ajouter un lien"])
-            ->getForm();
+        $form = $this->createForm(LinkType::class, $link);
 
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
