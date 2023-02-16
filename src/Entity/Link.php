@@ -104,4 +104,18 @@ class Link
 
         return $this;
     }
+
+    public function getNbUpvotes():Int
+    {
+        $nb = 0;
+        foreach ($this->getReactions() as $reaction){
+            if($reaction->getType() == ReactionType::LIKE){
+                $nb++;
+            }else{
+                $nb--;
+            }
+        }
+
+        return $nb;
+    }
 }
