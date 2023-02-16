@@ -46,13 +46,14 @@ class Reaction
         return $this;
     }
 
-    public function getType(): ?string
+    public function getType(): ?ReactionType
     {
         return $this->type;
     }
 
     public function setType(string $type): self
     {
+        $type = ReactionType::from($type);
         $this->type = $type;
 
         return $this;
@@ -68,5 +69,9 @@ class Reaction
         $this->link = $link;
 
         return $this;
+    }
+
+    public function __construct(){
+        $this->setCreatedAt(new \DateTime());
     }
 }
