@@ -1,0 +1,9 @@
+<div class="topBar" style="display: flex; flex-direction: row;">
+    <h1>Newshare</h1>
+    {% if app.user %}
+        <a href="#">Logout</a>
+        <p> - {{ app.user.userIndentifier }}</p>
+    {% else %}
+        <a href="#">Login</a>
+    {% endif %}
+</div>
