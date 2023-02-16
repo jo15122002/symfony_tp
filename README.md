@@ -26,13 +26,13 @@
 - /reaction/delete/{id} GET : supprimer une réaction
 
 
-- Le ParamConverter permet de récupérer des paramètres de la route
+- Le ParamConverter permet de récupérer des paramètres de la route et de les convertir en objets
 
 
 
 
 ### Formuaires Symfony
-- Un formulaire Symfony ets un moyen plus rapide et facile de créer un formulaire HTML et traiter ses données par la suite
+- Un formulaire Symfony est un moyen plus rapide et facile de créer un formulaire HTML et traiter ses données par la suite
 - Gestion simplifié du traitement des données
 - Validation des données
 - Moyens de sécurité déjà intégrés
