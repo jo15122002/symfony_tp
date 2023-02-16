@@ -17,13 +17,21 @@ class LinkController extends AbstractController
         ]);
     }
 
-    #[Route('/link/delete/{id}', name: 'link')]
+    #[Route('/link/{id}', name: 'link_show')]
+    public function show(LinkRepository $linkRepository, string $id): Response
+    {
+        $link = $linkRepository->find($id);
+        return $this->render('link/show.html.twig', [
+            'controller_name' => 'LinkController',
+            'link' => $link
+        ]);
+    }
+
+    #[Route('/link/delete/{id}', name: 'link_delete')]
     public function delete(LinkRepository $linkRepository, String $id): Response
     {
         $link = $linkRepository->find($id);
-        $linkRepository->remove($link);
-        return $this->render('link/index.html.twig', [
-            'controller_name' => 'LinkController'
-        ]);
+        $linkRepository->remove($link, true);
+        return $this->redirectToRoute("home");
     }
 }
